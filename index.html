@@ -4,14 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hisnul Muslim - Apprentissage & Quiz</title>
-  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif; /* Using Inter as default, Amiri for Arabic */
+      background-color: #f0fdf4; /* Light green background */
+    }
+    .islamic-pattern {
+      background-color: #065f46; /* Darker green for header/footer */
+      background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23047857\" fill-opacity=\"0.4\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm12 10V6h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 12v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-12 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-12-8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-12V6h-2v4h-4v2h4v4h2V6h4V4h-4zm-12 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 14V0H4v4H0v2h4v4h2v-4h4V6H6zm0 12v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0 12v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0 12v-4H4v4H0v2h4v4h2v-4h4v-2H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    }
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .header {
+      padding: 1.5rem 0;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link {
+      color: #e0f2f7; /* Light blue for links */
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      background-color: #059669; /* Green button */
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #047857; /* Darker green on hover */
+      transform: translateY(-2px);
+    }
+    .btn-option {
+      width: 100%;
+      text-align: left;
+      background-color: #ecfdf5; /* Very light green for options */
+      color: #065f46; /* Dark green text */
+      border: 1px solid #a7f3d0; /* Light green border */
+      padding: 1rem 1.25rem;
+      border-radius: 0.75rem;
+      font-size: 1.125rem; /* text-lg */
+      display: flex;
+      align-items: center;
+      font-family: 'Amiri', serif; /* Arabic font for options */
+    }
+    .btn-option:hover {
+      background-color: #d1fae5; /* Slightly darker green on hover */
+    }
+    .option-icon {
+      margin-right: 0.75rem;
+      font-size: 1.25rem;
+    }
+    .card {
+      background-color: #ecfdf5; /* Very light green */
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #a7f3d0;
+    }
+    #quiz-container {
+      background-color: #f0fdf4; /* Match body background */
+      border: 1px solid #d1fae5; /* Match card border */
+    }
+    #question {
+      font-family: 'Inter', sans-serif; /* French font for question */
+    }
+  </style>
 </head>
 <body class="min-h-screen flex flex-col">
   <!-- Header -->
   <header class="header islamic-pattern">
     <div class="container flex justify-between items-center">
-      <h1 class="text-2xl md:text-3xl font-bold text-white">Hisnul Muslim</h1>
+      <h1 class="text-2xl md:text-3xl font-bold text-white rounded-lg p-2">Hisnul Muslim</h1>
       <nav>
         <ul class="flex space-x-4">
           <li><a href="#home" class="nav-link">Accueil</a></li>
@@ -32,7 +114,7 @@
   </section>
 
   <!-- Quiz Section -->
-  <section id="quiz" class="bg-white py-12">
+  <section id="quiz" class="bg-white py-12 rounded-lg m-4 shadow-xl">
     <div class="container">
       <h2 class="text-3xl font-semibold text-green-800 text-center mb-8">Quiz sur Hisnul Muslim</h2>
       <div id="quiz-container" class="max-w-2xl mx-auto bg-gray-50 p-6 rounded-lg shadow-lg">
@@ -48,19 +130,19 @@
   <section id="methods" class="container py-12">
     <h2 class="text-3xl font-semibold text-green-800 text-center mb-8">Méthodes de Mémorisation Efficaces</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <div class="card">
+      <div class="card rounded-lg">
         <h3 class="text-xl font-medium text-green-700 mb-2">1. Répétition Espacée</h3>
         <p class="text-gray-600">Révisez les invocations à intervalles croissants (1 jour, 3 jours, 1 semaine) pour renforcer la mémoire à long terme.</p>
       </div>
-      <div class="card">
+      <div class="card rounded-lg">
         <h3 class="text-xl font-medium text-green-700 mb-2">2. Association Visuelle</h3>
         <p class="text-gray-600">Associez chaque invocation à une image mentale ou une situation (ex. : invocation pour entrer à la mosquée → visualisez une mosquée).</p>
       </div>
-      <div class="card">
+      <div class="card rounded-lg">
         <h3 class="text-xl font-medium text-green-700 mb-2">3. Pratique Quotidienne</h3>
         <p class="text-gray-600">Intégrez les invocations dans votre routine (ex. : dire l'invocation du matin après Fajr).</p>
       </div>
-      <div class="card">
+      <div class="card rounded-lg">
         <h3 class="text-xl font-medium text-green-700 mb-2">4. Enseigner aux Autres</h3>
         <p class="text-gray-600">Expliquez les invocations à quelqu’un d’autre pour mieux les retenir.</p>
       </div>
@@ -68,8 +150,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer islamic-pattern mt-auto">
-    <div class="container text-center">
+  <footer class="footer islamic-pattern mt-auto rounded-t-lg">
+    <div class="container text-center py-4">
       <p class="text-white">© 2025 Hisnul Muslim. Tous droits réservés.</p>
     </div>
   </footer>
@@ -77,34 +159,204 @@
   <script>
     const quizData = [
       {
-        question: "Quelle est l'invocation à dire en entrant dans la mosquée ?",
-        options: [
-          "Allâhumma iftah lî abwâba rahmatik",
-          "SubhânAllah wa bihamdih",
-          "Allâhumma salli ‘alâ Muhammad",
-          "Bismillâh wal-hamdulillâh"
-        ],
-        correct: 0
+          question: "Quelle est l'invocation à dire en entrant dans la mosquée ?",
+          options: [
+              "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",
+              "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ.",
+              "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+              "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ"
+          ],
+          correct: 0
       },
       {
-        question: "Quelle invocation dire avant de dormir ?",
-        options: [
-          "Allâhumma bismika amûtu wa ahyâ",
-          "Lâ ilâha illallâh",
-          "Allâhumma innî as’alukal-‘âfiya",
-          "Astaghfirullâh"
-        ],
-        correct: 0
+          question: "Quelle invocation dire avant de dormir ?",
+          options: [
+              "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا",
+              "بِسْمِ اللَّهِ",
+              "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ",
+              "أَسْتَغْفِرُ اللَّهَ"
+          ],
+          correct: 0
       },
       {
-        question: "Quelle invocation dire en sortant de la maison ?",
-        options: [
-          "Bismillâh, tawakkaltu ‘alallâh",
-          "Allâhumma salli ‘alâ Muhammad",
-          "SubhânAllah wa bihamdih",
-          "Allâhumma iftah lî abwâba rahmatik"
-        ],
-        correct: 0
+          question: "Quelle invocation dire en sortant de la maison ?",
+          options: [
+              "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ.",
+              "الْحَمْدُ لِلَّهِ",
+              "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
+              "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِن شَرِّ مَا خَلَقَ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle est l'invocation à dire en se réveillant ?",
+          options: [
+              "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+              "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا",
+              "سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ",
+              "لاَ إِلَهَ إِلاَّ أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation dire en sortant des toilettes ?",
+          options: [
+              "غُفْرَانَكَ",
+              "بِسْمِ اللَّهِ",
+              "الْحَمْدُ لِلَّهِ",
+              "أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation dire avant d'entrer dans les toilettes ?",
+          options: [
+              "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
+              "غُفْرَانَكَ",
+              "بِسْمِ اللَّهِ",
+              "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِن شَرِّ مَا خَلَقَ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation dire en rentrant chez soi ?",
+          options: [
+              "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى رَبِّنَا تَوَكَّلْنَا.",
+              "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ",
+              "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",
+              "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle est l'invocation à dire en sortant de la mosquée ?",
+          options: [
+              "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
+              "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",
+              "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+              "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle est l'invocation à dire avant de manger ?",
+          options: [
+              "بِسْمِ اللَّهِ",
+              "الْحَمْدُ لِلَّهِ",
+              "اللَّهُمَّ بَارِكْ لَنَا فِيهِ وَأَطْعِمْنَا خَيْراً مِنْهُ",
+              "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle est l'invocation à dire à la fin du repas ?",
+          options: [
+              "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ",
+              "بِسْمِ اللَّهِ",
+              "اللَّهُمَّ بَارِكْ لَنَا فِيهِ وَزِدْنَا مِنْهُ",
+              "سُبْحَانَ اللَّهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter après l'appel à la prière (Adhan) ?",
+          options: [
+              "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ وَالصَّلاةِ الْقَائِمَةِ آتِ مُحَمَّداً الْوَسِيلَةَ وَالْفَضِيلَةَ وَابْعَثْهُ مَقَاماً مَحْمُوداً الَّذِي وَعَدْتَهُ، إِنَّكَ لا تُخْلِفُ الْمِيعَادَ",
+              "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ",
+              "لاَ إِلَهَ إِلاَّ اللَّهُ",
+              "سُبْحَانَ اللَّهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter au début de la prière (Takbir al-Ihram) ?",
+          options: [
+              "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنْ خَطَايَايَ كَمَا يُنَقَّى الثَّوْبُ الأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالثَّلْجِ وَالْمَاءِ وَالْبَرَدِ",
+              "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلا إِلَهَ غَيْرُكَ",
+              "وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَوَاتِ وَالأَرْضَ حَنِيفاً وَمَا أَنَا مِنَ الْمُشْرِكِينَ",
+              "الْحَمْدُ لِلَّهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter durant l'inclinaison (Roukou') ?",
+          options: [
+              "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+              "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلا إِلَهَ غَيْرُكَ",
+              "اللَّهُمَّ رَبَّنَا وَلَكَ الْحَمْدُ",
+              "اللَّهُ أَكْبَرُ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter en se relevant de l'inclinaison (Roukou') ?",
+          options: [
+              "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ",
+              "اللَّهُ أَكْبَرُ كَبِيراً، اللَّهُ أَكْبَرُ كَبِيراً، وَالْحَمْدُ لِلَّهِ كَبِيراً، وَسُبْحَانَ اللَّهِ كَبِيراً، وَالْحَمْدُ لِلَّهِ كَبِيراً، وَسُبْحَانَ اللَّهِ كَبِيراً",
+              "رَبَّنَا وَلَكَ الْحَمْدُ",
+              "سُبْحَانَ اللَّهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter pendant la prosternation (Sujoud) ?",
+          options: [
+              "سُبْحَانَ رَبِّيَ الأَعْلَى",
+              "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي",
+              "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ",
+              "اللَّهُ أَكْبَرُ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter entre les deux prosternations ?",
+          options: [
+              "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَاهْدِنِي وَاجْبُرْنِي وَعَافِنِي وَارْزُقْنِي وَارْفَعْنِي",
+              "رَبِّ اغْفِرْ لِي ، رَبِّ اغْفِرْ لِي",
+              "سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلا إِلَهَ إِلاَّ اللَّهُ وَاللَّهُ أَكْبَرُ",
+              "الْحَمْدُ لِلَّهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter après le Tachahhoud et avant le Salut final ?",
+          options: [
+              "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ، وَمِنْ عَذَابِ الْقَبْرِ، وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ، وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ",
+              "اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْماً كَثِيراً، وَلا يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ",
+              "اللَّهُمَّ اغْفِرْ لِي مَا قَدَّمْتُ وَمَا أَخَّرْتُ",
+              "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter en entrant au marché ?",
+          options: [
+              "لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، يُحْيِي وَيُمِيتُ، وَهُوَ حَيٌّ لاَ يَمُوتُ، بِيَدِهِ الْخَيْرُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+              "بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ",
+              "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا وَخَيْرَ مَا فِيهَا",
+              "الْحَمْدُ لِلَّهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter en voyant quelqu'un dans une épreuve ?",
+          options: [
+              "الْحَمْدُ لِلَّهِ الَّذِي عَافَانِي مِمَّا ابْتَلاكَ بِهِ، وَفَضَّلَنِي عَلَى كَثِيرٍ مِمَّنْ خَلَقَ تَفْضِيلاً",
+              "اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَاسَ اشْفِ أَنْتَ الشَّافِي لا شِفَاءَ إِلاَّ شِفَاؤُكَ",
+              "لاَ بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ",
+              "سُبْحَانَ اللَّهِ"
+          ],
+          correct: 0
+      },
+      {
+          question: "Quelle invocation doit-on réciter pendant la pluie ?",
+          options: [
+              "اللَّهُمَّ صَيِّباً نَافِعاً",
+              "اللَّهُمَّ حَوَالَيْنَا وَلاَ عَلَيْنَا",
+              "سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ وَالْمَلاَئِكَةُ مِنْ خِيفَتِهِ",
+              "الْحَمْدُ لِلَّهِ"
+          ],
+          correct: 0
       }
     ];
 
@@ -131,6 +383,11 @@
     function checkAnswer(index) {
       const q = quizData[currentQuestion];
       const result = document.getElementById('result');
+      // Disable all buttons after an answer is selected
+      Array.from(document.querySelectorAll('.btn-option')).forEach(button => {
+        button.disabled = true;
+      });
+
       if (index === q.correct) {
         result.innerText = 'Correct !';
         result.classList.add('text-green-600');
@@ -150,8 +407,8 @@
         loadQuestion();
       } else {
         document.getElementById('quiz-container').innerHTML = `
-          <h3 class="text-xl font-medium">Quiz terminé !</h3>
-          <p class="text-lg">Votre score : ${score}/${quizData.length}</p>
+          <h3 class="text-xl font-medium text-green-800">Quiz terminé !</h3>
+          <p class="text-lg text-gray-700">Votre score : ${score}/${quizData.length}</p>
           <button class="btn btn-primary mt-4" onclick="location.reload()">Recommencer</button>
         `;
       }
