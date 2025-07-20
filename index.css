@@ -1,0 +1,183 @@
+
+/* Général */
+body {
+  font-family: 'Amiri', Arial, sans-serif; /* Ajout d'un fallback */
+  background: linear-gradient(to bottom, #f0f4f8, #d4e4d9);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; /* Amélioration de la lisibilité */
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Légère augmentation du padding */
+}
+
+/* Motif islamique */
+.islamic-pattern {
+  background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+  background-color: #1a4731;
+  opacity: 0.9;
+  background-size: cover; /* Meilleur rendu du motif */
+}
+
+/* Header */
+.header {
+  padding: 1.5rem 0; /* Plus d'espace pour un look aéré */
+  color: #fff;
+}
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transition plus fluide */
+}
+.nav-link:hover {
+  color: #f4d03f;
+  background-color: rgba(244, 208, 63, 0.1); /* Fond subtil au survol */
+}
+.nav-link:focus {
+  outline: 2px solid #f4d03f; /* Accessibilité */
+  outline-offset: 2px;
+}
+
+/* Boutons */
+.btn {
+  display: inline-flex; /* Flex pour un meilleur alignement */
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem; /* Légère augmentation pour plus de confort */
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none; /* Pour les boutons sous forme de liens */
+  transition: all 0.3s ease-in-out; /* Transition plus fluide */
+  cursor: pointer;
+  border: none; /* Suppression des bordures par défaut */
+}
+.btn:focus {
+  outline: 3px solid #f4d03f; /* Contour pour accessibilité */
+  outline-offset: 2px;
+}
+.btn:disabled {
+  background-color: #b0bec5; /* Gris pour état désactivé */
+  color: #78909c;
+  cursor: not-allowed;
+  transform: none; /* Pas d'effet de transformation */
+}
+
+/* Bouton principal */
+.btn-primary {
+  background-color: #2e7d32; /* Vert islamique riche */
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Ombre subtile */
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: #4caf50; /* Vert plus clair au survol */
+  transform: translateY(-3px); /* Effet de levée plus prononcé */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0); /* Retour à la position initiale */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Ombre réduite */
+}
+.btn-primary:focus {
+  outline: 3px solid #f4d03f; /* Contour doré pour accessibilité */
+}
+
+/* Bouton d'option */
+.btn-option {
+  width: 100%;
+  text-align: left;
+  background-color: #e8f5e9; /* Fond vert clair */
+  border: 2px solid #2e7d32; /* Bordure verte */
+  padding: 1rem 1.5rem; /* Plus d'espace interne */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Espacement accru entre icône et texte */
+  font-size: 1.1rem;
+  border-radius: 0.75rem; /* Coins plus arrondis */
+  transition: all 0.2s ease-in-out; /* Transition rapide pour réactivité */
+}
+.btn-option:hover:not(:disabled) {
+  background-color: #c8e6c9; /* Vert plus saturé au survol */
+  border-color: #4caf50; /* Bordure plus claire */
+  transform: scale(1.03); /* Agrandissement léger */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+.btn-option:active:not(:disabled) {
+  transform: scale(0.97); /* Effet de pression */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre réduite */
+}
+.btn-option:focus {
+  outline: 3px solid #f4d03f; /* Contour doré pour accessibilité */
+}
+.option-icon {
+  font-size: 1.3rem; /* Icône légèrement plus grande */
+  color: #2e7d32; /* Couleur verte pour cohérence */
+  transition: color 0.2s ease-in-out;
+}
+.btn-option:hover .option-icon {
+  color: #4caf50; /* Icône suit le changement de couleur */
+}
+
+/* Cartes pour les méthodes */
+.card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem; /* Coins plus arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px); /* Levée plus marquée */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Ombre renforcée */
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem 0; /* Plus d'espace */
+  color: #fff;
+  background-color: #1a4731; /* Fond assorti au motif islamique */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem; /* Réduction du padding pour petits écrans */
+  }
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .btn {
+    padding: 0.75rem 1.25rem; /* Boutons plus compacts */
+    font-size: 1rem;
+  }
+  .btn-option {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+  .option-icon {
+    font-size: 1.2rem; /* Icône ajustée pour petits écrans */
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .btn {
+    width: 100%; /* Boutons pleine largeur sur petits écrans */
+  }
+  .btn-option {
+    font-size: 0.95rem; /* Texte légèrement plus petit */
+  }
+}
